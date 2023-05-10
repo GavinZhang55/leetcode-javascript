@@ -1,5 +1,6 @@
 # 1768. 交替合并字符串
 给你两个字符串 word1 和 word2 。请你从 word1 开始，通过交替添加字母来合并字符串。如果一个字符串比另一个字符串长，就将多出来的字母追加到合并后字符串的末尾。返回合并后的字符串。
+
 示例 1：
 ```
 输入：word1 = "abc", word2 = "pqr"
@@ -8,4 +9,23 @@
 word1：  a   b   c
 word2：    p   q   r
 合并后：  a p b q c r
+```
+
+遍历法
+```
+var mergeAlternately = function(word1, word2) {
+    const maxLen = Math.max(word1.length, word2.length);
+    let i = 0;
+    const ans = [];
+    while (i < maxLen) {
+        if (i < word1.length) {
+            ans.push(word1[i]);
+        }
+        if (i < word2.length) {
+            ans.push(word2[i]);
+        }
+        ++i;
+    }
+    return ans.join('');
+};
 ```
