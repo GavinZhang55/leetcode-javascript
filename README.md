@@ -1,2 +1,4 @@
 # lettcode-javascript
-LeetCode每日刷题笔记，javaScript方式实现
+## LeetCode 75
+> 面试必考精华版 75题覆盖全量考点
+### 数组/字符串
