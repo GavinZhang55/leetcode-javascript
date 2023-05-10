@@ -10,7 +10,7 @@ word1：  a   b   c
 word2：    p   q   r
 合并后：  a p b q c r
 ```
-
+🤔**answer**
 遍历法
 ```
 var mergeAlternately = function(word1, word2) {
@@ -27,5 +27,32 @@ var mergeAlternately = function(word1, word2) {
         ++i;
     }
     return ans.join('');
+};
+```
+# 1071. 字符串的最大公因子
+对于字符串 s 和 t，只有在 s = t + ... + t（t 自身连接 1 次或多次）时，我们才认定 “t 能除尽 s”。
+给定两个字符串 str1 和 str2 。返回 最长字符串 x，要求满足 x 能除尽 str1 且 x 能除尽 str2 。
+
+示例：
+```
+输入：str1 = "ABCABC", str2 = "ABC"
+输出："ABC"
+```
+```
+输入：str1 = "LEET", str2 = "CODE"
+输出：""
+```
+🤔**answer**
+```
+var gcdOfStrings = function(str1, str2) {
+    let ans = '';
+    for(i = 1; i <= str1.length; i++) {
+        const str = str1.slice(0, i);
+        //两个字符串被split后没字符了，并且最大公因子保留最大长度
+        if(str1.split(str).every(item => item === '') && str2.split(str).every(item => item === '') && ans.length < str.length) {
+            ans = str;
+        }
+    }
+    return ans;
 };
 ```
