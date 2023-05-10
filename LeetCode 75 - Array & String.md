@@ -43,6 +43,7 @@ var mergeAlternately = function(word1, word2) {
 输出：""
 ```
 🤔**answer**
+
 方法1:
 ```
 var gcdOfStrings = function(str1, str2) {
@@ -58,6 +59,7 @@ var gcdOfStrings = function(str1, str2) {
 };
 ```
 方法2:
+
 看到标题里面有最大公因子这个词，于是先默写一下 gcd 算法
 `const gcd = (a, b) => (0 === b ? a : gcd(b, a % b))`
 总有一种好像顺手就能用上的感觉呢。
